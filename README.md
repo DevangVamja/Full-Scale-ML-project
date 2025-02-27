@@ -10,7 +10,7 @@ This repository demonstrates a **full-scale, end-to-end machine learning project
 ### 🔹 Key Features:
 - ✅ **Automated Data Pipeline** – Efficient ingestion, cleaning, transformation, and feature engineering using **dbt, Pandas, and NumPy**.
 - ✅ **Robust Model Training** – Hyperparameter tuning, cross-validation, and evaluation using **Scikit-learn, TensorFlow, and XGBoost**.
-- ✅ **Model Serving & API** – Seamless deployment via **FastAPI & Docker** for real-time predictions.
+- ✅ **Model Serving & API** – Seamless deployment via **Flask & Docker** for real-time predictions.
 - ✅ **CI/CD Integration** – Automated testing, monitoring, and deployment with **GitHub Actions & Kubernetes**.
 - ✅ **Cloud Integration** – Scalable storage and computing with **AWS/GCP**.
 
@@ -25,10 +25,11 @@ Full-Scale-ML-Project/
 │── src/                # Source code for pipeline & models
 │   ├── components/     # Various components for Data ingestion & preprocessing
 │   ├── data_pipeline/  # test and train pipelines for seamless integration
-│── tests/              # Unit & integration tests
 │── Dockerfile          # Containerization setup
 │── requirements.txt    # Dependencies
+│── app.py              # Flask app Endpoints
 │── README.md           # Project documentation
+│── setup.py            # For easy setup on local machine
 ```
 
 ---
@@ -60,54 +61,38 @@ pip install -r requirements.txt
 
 ## 🚀 Usage
 
-### **1️⃣ Data Processing**
-Run the data pipeline to clean, preprocess, and generate feature sets:
+### **1️⃣ Launching Flask App**
+Run the Flask app to start the servers:
 
 ```bash
-python src/data_pipeline/data_processing.py
+python app.py
 ```
 
-### **2️⃣ Model Training**
-Train the model with hyperparameter tuning:
+### **2️⃣ Data Ingestion, Transformation and Model Training**
+Use "Train Model" button to run the train pipeline to clean, preprocess, and generate feature sets and Train the model with hyperparameter tuning:
+or use Saved model to start predictions with "Predict Performance" button
 
-```bash
-python src/training/train_model.py --config configs/model_config.yaml
-```
 
 ### **3️⃣ Model Evaluation**
 
-```bash
-python src/training/evaluate.py --model saved_model.pkl
-```
+After the Model training, the R2 Score will be shown as accuracy and "Go to Prediction Page" will take you to prediction page.
 
-### **4️⃣ Deploy API for Predictions**
+### **4️⃣ Accessing the model**
 
-```bash
-uvicorn src.deployment.api:app --host 0.0.0.0 --port 8000
+```text
+
+Fill the all the fields in form and hit submit, the predicted Maths score will be displayed below the Form.
+
 ```
 
 Access it at: **http://localhost:8000/docs**
 
 ---
 
-## 📊 Results & Performance
-
-| Metric        | Score  |
-|--------------|--------|
-| Accuracy     | 94.3%  |
-| Precision    | 92.7%  |
-| Recall       | 91.2%  |
-| F1-Score     | 92.0%  |
-
-*(Numbers are placeholders; update with actual results)*
-
----
-
 ## 🛠️ Technologies & Tools
 
 ✅ **Languages:** Python (Pandas, NumPy, Scikit-learn, TensorFlow, XGBoost)  
-✅ **Data Engineering:** dbt, SQL, Apache Airflow  
-✅ **Model Deployment:** FastAPI, Docker, Kubernetes  
+✅ **Model Deployment:** Docker, Kubernetes  
 ✅ **Cloud:** AWS S3, EC2, GCP AI Platform  
 ✅ **MLOps & CI/CD:** GitHub Actions, MLflow  
 
@@ -115,10 +100,7 @@ Access it at: **http://localhost:8000/docs**
 
 ## 🏆 Future Improvements
 
-- 🔹 **Add Model Drift Detection** to monitor performance over time
-- 🔹 **Implement Distributed Training** for large-scale datasets
-- 🔹 **Integrate AutoML** for hyperparameter tuning
-- 🔹 **Enhance Monitoring with Prometheus & Grafana**
+- 🔹 **Fetching Data From MongoDB** for better Data Engineering
 
 ---
 
