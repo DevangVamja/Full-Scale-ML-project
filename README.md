@@ -79,13 +79,12 @@ After the Model training, the R2 Score will be shown as accuracy and "Go to Pred
 
 ### **4️⃣ Accessing the model**
 
-```text
 
 Fill the all the fields in form and hit submit, the predicted Maths score will be displayed below the Form.
 
-```
 
-Access it at: **http://localhost:8000/docs**
+
+Access it at: **http://localhost:5000/**
 
 ---
 
