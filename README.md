@@ -8,8 +8,8 @@
 This repository demonstrates a **full-scale, end-to-end machine learning project**, covering everything from **data ingestion** to **model deployment**. The goal is to create a **scalable, production-ready ML pipeline** that ensures reproducibility, automation, and efficiency.
 
 ### 🔹 Key Features:
-- ✅ **Automated Data Pipeline** – Efficient ingestion, cleaning, transformation, and feature engineering using **dbt, Pandas, and NumPy**.
-- ✅ **Robust Model Training** – Hyperparameter tuning, cross-validation, and evaluation using **Scikit-learn, TensorFlow, and XGBoost**.
+- ✅ **Automated Data Pipeline** – Efficient ingestion, cleaning, transformation, and feature engineering using **Pandas, and NumPy**.
+- ✅ **Robust Model Training** – Hyperparameter tuning, cross-validation, and evaluation using **Scikit-learn, GridSearchCV, and XGBoost**.
 - ✅ **Model Serving & API** – Seamless deployment via **Flask & Docker** for real-time predictions.
 - ✅ **CI/CD Integration** – Automated testing, monitoring, and deployment with **GitHub Actions & Kubernetes**.
 - ✅ **Cloud Integration** – Scalable storage and computing with **AWS/GCP**.
