@@ -3,111 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Information Form</title>
+    <title>Model Training Complete</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            margin: 0;
+            overflow: hidden;
         }
-        .form-container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-        }
-        .form-container h2 {
-            margin-bottom: 20px;
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
         }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        .form-group input, .form-group select {
-            width: 100%;
-            padding: 8px;
-            box-sizing: border-box;
-        }
-        .form-group button {
-            width: 100%;
-            padding: 10px;
-            background-color: #007BFF;
+
+        h1 {
             color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            animation: slideIn 1s ease-out;
         }
-        .form-group button:hover {
-            background-color: #0056b3;
+
+        p {
+            color: #fff;
+            font-size: 1.2rem;
+            animation: slideIn 1.5s ease-out;
+        }
+
+        .accuracy {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #4caf50;
+            animation: pulse 2s infinite;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            color: #fff;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
         }
     </style>
 </head>
 <body>
-    <div class="form-container">
-        <h2>Student Information</h2>
-        <form action="/train" method="POST">
-            <div class="form-group">
-                <label for="gender">Gender</label>
-                <select id="gender" name="gender">
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="race_ethnicity">Race/Ethnicity</label>
-                <select id="race_ethnicity" name="race_ethnicity">
-                    <option value="group A">Group A</option>
-                    <option value="group B">Group B</option>
-                    <option value="group C">Group C</option>
-                    <option value="group D">Group D</option>
-                    <option value="group E">Group E</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="parental_level_of_education">Parental Level of Education</label>
-                <select id="parental_level_of_education" name="parental_level_of_education">
-                    <option value="some high school">Some High-School</option>
-                    <option value="high school">High-School</option>
-                    <option value="some college">Some College</option>
-                    <option value="bachelor's degree">Bachelor's Degree</option>
-                    <option value="master's degree">Master's Degree</option>
-                    <option value="associate's degree">Associate's Degree</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="lunch">Lunch</label>
-                <select id="lunch" name="lunch">
-                    <option value="standard">Standard</option>
-                    <option value="free/reduced">Free/Reduced</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="test_preparation_course">Test Preparation Course</label>
-                <select id="test_preparation_course" name="test_preparation_course">
-                    <option value="none">None</option>
-                    <option value="completed">Completed</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="reading_score">Reading Score</label>
-                <input type="number" id="reading_score" name="reading_score">
-            </div>
-            <div class="form-group">
-                <label for="writing_score">Writing Score</label>
-                <input type="number" id="writing_score" name="writing_score">
-            </div>
-            <div class="form-group">
-                <button type="submit">Submit</button>
-            </div>
-        </form>
+    <div class="container">
+        <h1>Model Training Completed!</h1>
+        <p>The machine learning model has been successfully trained.</p>
+        <p>Final Test Accuracy: <span class="accuracy">{{ accuracy }}%</span></p>
+        <a href="/predict" class="btn">Go to Prediction Page</a>
     </div>
 </body>
 </html>

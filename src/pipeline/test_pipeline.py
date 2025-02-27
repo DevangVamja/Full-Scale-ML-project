@@ -26,7 +26,7 @@ class Prediction:
     def __init__(self, data):
         logging.info("loading data")
         self.data = data
-        self.preprocessor_path = os.path.join("artifacts", "proprocessor.pkl")
+        self.preprocessor_path = os.path.join("artifacts", "preprocessor.pkl")
         self.model_path = os.path.join("artifacts", "model.pkl")
         logging.info("data loaded")
 

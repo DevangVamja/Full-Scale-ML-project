@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information Form</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .form-container h2 {
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: #fff;
+            font-size: 2rem;
+            animation: slideIn 1s ease-out;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            animation: slideIn 1.5s ease-out;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            box-sizing: border-box;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            font-size: 1rem;
+            transition: background 0.3s ease, transform 0.3s ease;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 0.8rem center;
+            background-size: 1.2rem;
+        }
+
+        .form-group select option {
+            background: #667eea;
+            color: #fff;
+            padding: 0.8rem;
+            font-size: 1rem;
+        }
+
+        .form-group select option:hover {
+            background: #764ba2;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            background: rgba(255, 255, 255, 0.3);
+            outline: none;
+            transform: scale(1.02);
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 0.8rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-group button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .result {
+            margin-top: 1.5rem;
+            text-align: center;
+            color: #fff;
+            font-size: 1.2rem;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .animated-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            animation: moveBackground 10s infinite alternate;
+        }
+
+        @keyframes moveBackground {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="animated-bg"></div>
+    <div class="form-container">
+        <h2>Student Information</h2>
+        <form id="studentForm" action="/predict" method="POST">
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="race_ethnicity">Race/Ethnicity</label>
+                <select id="race_ethnicity" name="race_ethnicity">
+                    <option value="group A">Group A</option>
+                    <option value="group B">Group B</option>
+                    <option value="group C">Group C</option>
+                    <option value="group D">Group D</option>
+                    <option value="group E">Group E</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="parental_level_of_education">Parental Level of Education</label>
+                <select id="parental_level_of_education" name="parental_level_of_education">
+                    <option value="some high school">Some High-School</option>
+                    <option value="high school">High-School</option>
+                    <option value="some college">Some College</option>
+                    <option value="bachelor's degree">Bachelor's Degree</option>
+                    <option value="master's degree">Master's Degree</option>
+                    <option value="associate's degree">Associate's Degree</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="lunch">Lunch</label>
+                <select id="lunch" name="lunch">
+                    <option value="standard">Standard</option>
+                    <option value="free/reduced">Free/Reduced</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="test_preparation_course">Test Preparation Course</label>
+                <select id="test_preparation_course" name="test_preparation_course">
+                    <option value="none">None</option>
+                    <option value="completed">Completed</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="reading_score">Reading Score</label>
+                <input type="number" id="reading_score" name="reading_score" required>
+            </div>
+            <div class="form-group">
+                <label for="writing_score">Writing Score</label>
+                <input type="number" id="writing_score" name="writing_score" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Predict Maths Score</button>
+            </div>
+        </form>
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        // Handle form submission with AJAX to avoid page reload
+        document.getElementById('studentForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+
+            fetch('/predict', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('result').innerText = `Predicted Maths Score: ${data.maths_score}`;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>
